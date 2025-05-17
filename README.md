@@ -35,17 +35,14 @@ You can also run `./gradlew :desktop:tasks` to list other options.
 
 ## Setup the development environment
 
-* Open IntelliJ. If you don't have IntelliJ on your computer yet 
-then you can download and install it from [here](https://www.jetbrains.com/idea/download)
-* In the menu select File / New / Project from Version Control / Git
-* In the new window add the following path: `https://git.geogebra.org/ggb/geogebra.git`
-* Click on ‘Checkout’, select your preferred destination folder, select Java 1.8 as the SDK, 
-click on OK and wait…
-* After the project is checked out, select the root folder of the project, 
-open the Run Anything tool (Double ^ on Mac) and run the following command: 
-`./gradlew :web:run`
-* After a minute or two the GWT UI will appear
-* After the Startup URLs are loaded on the UI, select the app that you wish start. For example, 
-if you select `graphing.html` and click on Launch Default Browser 
-then the Graphing Calculator app with the newest features 
-will load and start in your default browser 
+1. You need a `Java 11` to run this proggramme.
+2. If there is no `jre` in your Java 11, use `./bin/jlink --module-path jmods --add-modules java.desktop --output jre` to create it.
+3. Set the path of `Java 11` in `$JAVA_HOME`, maybe set it in `gradlew` or `gradlew.bat` is simple. The path should have `jre` and `bin` ddirectory.
+
+### Run in Web
+1. Use `gradlew :web:run`
+2. When the GWT GUI show, you should choos the MTML file in the windows(In the upper middle position of the windows). Then wait, the browser windows will open, and it need to load for a time.
+3. You can lanuage in Global Setting(Click the setting bottom, theen click first bottom in the right)
+
+### Run in Desktop
+1. Use `gradlew :desktop:run`
